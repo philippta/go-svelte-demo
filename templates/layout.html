@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/components.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        table {
+            width: 1024px;
+            table-layout: fixed;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 0.5rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Hello go-svelte-demo</h1>
+
+    <div id="my-search-table"></div>
+    <script>
+        new SearchTable({
+            target: document.getElementById("my-search-table"),
+            props: {
+                data: {{ json . }},
+            },
+        })
+    </script>
+</body>
+
+</html>
